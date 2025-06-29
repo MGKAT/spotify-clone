@@ -1,0 +1,17 @@
+<h2>Playlists</h2>
+
+<form [formGroup]="form" (ngSubmit)="createPlaylist()">
+  <input formControlName="name" placeholder="Nom de la playlist" required />
+  <button type="submit">Créer</button>
+</form>
+
+<ul>
+  <li *ngFor="let playlist of playlists">
+    <strong>{{ playlist.name }}</strong> ({{ playlist.songs.length }} chansons)
+    
+    <button (click)="select(playlist._id)">Voir les chansons</button>
+    <button (click)="deletePlaylist(playlist._id)">Supprimer</button>
+  </li>
+</ul>
+
+<app-playlist-details *ngIf="selected" [playlistId]="selected"></app-playlist-details>

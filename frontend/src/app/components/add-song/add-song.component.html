@@ -1,0 +1,22 @@
+<h2>Ajouter une chanson</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label>Titre :</label>
+  <input formControlName="title" required />
+
+  <label>Artiste :</label>
+  <input formControlName="artist" required />
+
+  <label>Album :</label>
+  <input formControlName="album" />
+
+  <label>Durée (secondes) :</label>
+  <input formControlName="duration" type="number" required />
+
+  <label>URL audio :</label>
+  <input formControlName="audioUrl" required />
+
+  <button type="submit">Ajouter</button>
+</form>
+
+<p *ngIf="success">Chanson ajoutée !</p>

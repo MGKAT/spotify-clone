@@ -1,0 +1,96 @@
+/* playlist-details.component.css */
+
+h3 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  border-bottom: 2px solid #1db954;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+p {
+  color: #b3b3b3;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+  background-color: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+li {
+  padding: 1rem 1.5rem;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #282828;
+  transition: all 0.2s ease;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:hover {
+  background-color: #282828;
+}
+
+li::before {
+  content: "♫";
+  color: #1db954;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Animation pour l'apparition des chansons */
+li {
+  animation: fadeIn 0.3s ease forwards;
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Délai d'animation pour chaque élément */
+li:nth-child(1) { animation-delay: 0.1s; }
+li:nth-child(2) { animation-delay: 0.2s; }
+li:nth-child(3) { animation-delay: 0.3s; }
+/* ... ajoutez plus si nécessaire */
+
+/* Style pour les informations de la chanson */
+li span {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+    padding: 0.8rem 1rem;
+  }
+  
+  li::before {
+    display: none;
+  }
+}

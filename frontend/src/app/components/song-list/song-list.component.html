@@ -1,0 +1,16 @@
+<h2>Liste des chansons</h2>
+<ul>
+  <li *ngFor="let song of songs">
+    {{ song.title }} - {{ song.artist }}
+    <button (click)="playSong(song)">▶Lire</button>
+    <button (click)="toggleFavorite(song)">Favori</button>
+
+    <div>
+      <select [(ngModel)]="selectedPlaylist[song._id]">
+        <option value="">Choisir une playlist</option>
+        <option *ngFor="let p of playlists" [value]="p._id">{{ p.name }}</option>
+      </select>
+      <button (click)="addToPlaylist(song._id)">Ajouter à la playlist</button>
+    </div>
+  </li>
+</ul>
