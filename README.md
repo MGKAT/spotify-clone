@@ -5,7 +5,7 @@ Prototype d’un lecteur musical type Spotify, sans publicité :
 - Création, modification, suppression de playlists
 - Ajout aux favoris
 - Recommandations personnalisées
-- Lecture audio (Howler.js)
+- Lecture audio (Web Audio API)
 - Mode hors-ligne
 - Dashboard Power BI (statistiques d’usage)
 
